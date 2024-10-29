@@ -22,4 +22,12 @@ test:
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  adapter: postgrespl
+  encoding: unicode
+  pool: 5
+  
+  database: render_phsm
+  username: render_phsm_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  #database: storage/production.sqlite3
